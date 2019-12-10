@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>ToDo List</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<link
+	href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
+<script src="https://kit.fontawesome.com/1fe4fc882e.js"
+	crossorigin="anonymous"></script>
+<link href="css/bootstrap.min.css" rel="stylesheet"
+	th:href="@{/css/custom.css}">
+</head>
+<!--/*@thymesVar id="recipes" type="java.util.List"*/-->
+<!--/*@thymesVar id="recipe" type="com.sencerseven.basittarifler.domain.Recipe"*/-->
+<body>
+
+
+	<div class="page-content page-container" id="page-content">
+		<div class="padding">
+			<div class="row container  justify-content-center">
+				<div class="col-lg-12">
+					<div class="card px-3">
+						<div class="card-body">
+							<h4 class="card-title" th:text="${note.title}">Todo list</h4>
+							<div class="list-wrapper">
+								<ul class="d-flex flex-column-reverse todo-list">
+									<form action="/post/add" method="POST" th:object="${note}" enctype="multipart/form-data">
+									<input type="hidden" th:field="*{id}" class="form-control" >
+										<div class="form-group row">
+											<label for="staticEmail" class="col-sm-2 col-form-label">Title</label>
+											<div class="col-sm-10">
+												<input type="text" th:field="*{title}" class="form-control" id="staticEmail">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="exampleFormControlSelect1">Category</label>
+											<select class="form-control" th:field="*{todoType}" id="" style="padding:0px;">
+												<option th:each="type : ${T(com.elifserttas.todolist.enumator.TodoType).values()}"
+        th:value="${type}" th:text="${type.displayValue}">1</option>
+												
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="exampleFormControlTextarea1">Body</label>
+											<textarea class="form-control" th:field="*{body}"
+												id="exampleFormControlTextarea1" rows="3"></textarea>
+										</div>
+										
+										<div class="form-group">
+											<label for="exampleFormControlTextarea1">File</label>
+											<input class="form-control" type="file" th:field="*{file}"/>
+										</div>
+
+										<div class="form-group">
+											<button type="submit" class="btn btn-info float-right">Add</button>
+										</div>
+										<div class="form-group">
+											<a th:href="@{'/'}" class="btn btn-info float-right">Go Home Page</a>
+										</div>
+									</form>
+
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery.app.js" th:src="@{/js/custom.js}"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+</body>
+</html>
