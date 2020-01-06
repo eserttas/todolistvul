@@ -99,8 +99,18 @@ This allows access to other user information.
 ### Stored/Persistent XSS
  Where the malicious string originates from the website's database.
  
- -You can add scripting code into title input then you execute this code.
+ -You can add scripting code into post title input then you execute this code.
  
+## FINAL PROJECT UPDATE
+ 
+### Security Misconfiguration
+
+You can enter post detail page and put quotes after the url and site shows you vulnerability on screen
+
+### Broken Access Control
+
+if you create new user ,you can try to access /admin page and you see this user access this url becouse of there is no 'OPA' control 
+
 
 
 
