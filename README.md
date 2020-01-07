@@ -105,6 +105,9 @@ This allows access to other user information.
  Where the malicious string originates from the website's database.
  
  -You can add scripting code into post title input then you execute this code.
+ -You can try to put javascript code into title input as following
+ 
+ <script>window.location.replace("http://google.com");</script>
  
 ## FINAL PROJECT UPDATE
  
