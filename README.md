@@ -4,11 +4,11 @@ Todo list have got existing vulnerability
 
 Cloud IP (site adress) 
 
-http://46.101.193.234:8087
+http://46.101.193.234:8085
 
 H2 - Database Adress
 
-http://46.101.193.234:8087/h2-console
+http://46.101.193.234:8085/h2-console
 
 H2 console a girişten sonra
 
